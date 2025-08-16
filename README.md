@@ -28,3 +28,4 @@ npm run dev
 npm run build
 ```
 项目演示【基于 SpringBoot 以及 LangChain4j 的 JavaWeb 博客项目-哔哩哔哩】 https://b23.tv/or7Bj3G
+交流qq 2775965605

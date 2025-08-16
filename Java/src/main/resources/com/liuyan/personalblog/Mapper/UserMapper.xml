@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuyan.personalblog.Mapper.UserMapper">
+
+    <insert id="registerUser">
+        insert into user(username,password,image,create_time,self_intro) values(#{username},#{password},#{image},#{createTime},#{selfIntro})
+    </insert>
+    <update id="updateUserInfo">
+        update user set username=#{username},password=#{password},image=#{image},self_intro=#{selfIntro} where id=#{id}
+
+    </update>
+    <select id="loginUser" resultType="com.liuyan.personalblog.POJO.User">
+        SELECT * FROM user WHERE username = #{username} and password=#{password}
+    </select>
+</mapper>

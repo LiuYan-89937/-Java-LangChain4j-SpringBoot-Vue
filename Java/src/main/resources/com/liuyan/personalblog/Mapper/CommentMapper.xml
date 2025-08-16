@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuyan.personalblog.Mapper.CommentMapper">
+    <insert id="addComment" >
+        insert into comment(content, user_name, blog_id, heart_num, create_time) values(#{content}, #{username}, #{blogId}, 0, now())
+    </insert>
+
+    <select id="getCommentsByBlogId" resultType="com.liuyan.personalblog.POJO.Comment">
+        SELECT
+            c.id,
+            c.content,
+            c.user_name,
+            c.blog_id,
+            c.heart_num,
+            c.create_time
+        FROM
+            comment c
+        WHERE
+            c.blog_id = #{id}
+        ORDER BY
+            c.create_time DESC;
+    </select>
+</mapper>
